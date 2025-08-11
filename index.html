@@ -228,6 +228,8 @@
             line-height: 1.4;
         }
     </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3573490738793425"
+     crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="terminal-effect"></div>
@@ -275,7 +277,10 @@
     </main>
 
     <footer style="text-align:center; padding:2rem; color:#7777a0; font-size:0.9rem;">
-        © 2025 TrackPack.me. All rights reserved.
+        <footer>
+  <a href="/privacy.html">Privacy Policy</a> | <a href="/cookie.html">Cookie Policy</a>
+</footer>
+© 2025 TrackPack.me. All rights reserved.
     </footer>
 
     <script>
@@ -314,6 +319,101 @@
             input.addEventListener('keypress', (e) => { if (e.key === 'Enter') updateLinks(); });
         });
     </script>
+<style>
+  #cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f0f4f8;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    padding: 18px 24px;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #334155;
+    max-width: 400px;
+    text-align: center;
+    z-index: 10000;
+  }
+  #cookie-banner p {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+  }
+  #cookie-banner a {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+  #cookie-banner button {
+    background: #2563eb;
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    margin: 0 6px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #cookie-banner button#reject-cookies {
+    background: #e0e7ff;
+    color: #475569;
+  }
+  #cookie-banner button:hover#accept-cookies {
+    background: #1d4ed8;
+  }
+  #cookie-banner button:hover#reject-cookies {
+    background: #c7d2fe;
+  }
+</style>
+
+<div id="cookie-banner" style="display:none;">
+  <p>
+    Questo sito utilizza cookie per migliorare la tua esperienza. 
+    <a href="/cookie.html" target="_blank" rel="noopener noreferrer">Scopri di più</a>
+  </p>
+  <button id="accept-cookies">Accetta</button>
+  <button id="reject-cookies">Rifiuta</button>
+</div>
+
+<script>
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      let date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
+  }
+  function getCookie(name) {
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+    for(let i=0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  window.onload = function() {
+    if (!getCookie('cookies_consent')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+
+    document.getElementById('accept-cookies').onclick = function() {
+      setCookie('cookies_consent', 'accepted', 365);
+      document.getElementById('cookie-banner').style.display = 'none';
+      // Qui puoi attivare gli script di tracking, es. Google Analytics
+    };
+
+    document.getElementById('reject-cookies').onclick = function() {
+      setCookie('cookies_consent', 'rejected', 365);
+      document.getElementById('cookie-banner').style.display = 'none';
+      // Qui puoi disattivare eventuali script di tracking
+    };
+  }
+</script>
 </body>
 </html>
-
