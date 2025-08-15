@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>TrackPack.me - Package Tracking</title>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3573490738793425"
-     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* === Stile originale completo dal tuo file iniziale === */
+        /* === Stile originale completo === */
         :root {
             --deep-space: #0a0a14;
             --stellar-purple: #6c43f5;
@@ -189,6 +187,7 @@
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
         }
 
@@ -229,8 +228,207 @@
             text-align: center;
             line-height: 1.4;
         }
+        
+        /* === Ottimizzazioni Mobile === */
+        @media (max-width: 768px) {
+            .header-container {
+                width: 95%;
+            }
+            
+            .logo {
+                gap: 8px;
+            }
+            
+            .logo-icon {
+                font-size: 1.5rem;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 3rem 1rem 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .tracking-card {
+                padding: 1.5rem;
+                margin: 1.5rem auto;
+                border-radius: 12px;
+            }
+            
+            .tracking-header {
+                margin-bottom: 1.2rem;
+                padding-bottom: 1.2rem;
+            }
+            
+            .tracking-header h2 {
+                font-size: 1.2rem;
+                gap: 8px;
+            }
+            
+            .input-container {
+                flex-direction: column;
+                gap: 12px;
+                margin-bottom: 1.2rem;
+            }
+            
+            .tracking-input {
+                padding: 15px 18px;
+                font-size: 1rem;
+                width: 100%;
+            }
+            
+            .track-btn {
+                padding: 15px;
+                width: 100%;
+                font-size: 1rem;
+            }
+            
+            .site-link {
+                padding: 0.75rem;
+                font-size: 0.95rem;
+            }
+            
+            .info-text {
+                font-size: 0.85rem;
+            }
+            
+            footer {
+                padding: 1.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            footer div {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .hero {
+                padding: 2rem 0.5rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .tracking-card {
+                padding: 1.2rem;
+                margin: 1rem auto;
+                border-radius: 10px;
+            }
+            
+            .tracking-header h2 {
+                font-size: 1.1rem;
+            }
+            
+            .input-container {
+                gap: 10px;
+            }
+            
+            .tracking-input {
+                padding: 14px 16px;
+                font-size: 0.95rem;
+            }
+            
+            .track-btn {
+                padding: 14px;
+            }
+            
+            .site-link {
+                padding: 0.7rem;
+                font-size: 0.9rem;
+            }
+            
+            .info-text {
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Cookie Banner Mobile Optimization */
+        #cookie-banner {
+            position: fixed;
+            bottom: 10px;
+            left: 5%;
+            right: 5%;
+            transform: none;
+            max-width: 100%;
+            width: 90%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
+        #cookie-banner p {
+            margin-bottom: 10px;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        
+        #cookie-banner button {
+            padding: 8px 15px;
+            margin: 0 4px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 360px) {
+            #cookie-banner {
+                padding: 12px;
+            }
+            
+            #cookie-banner button {
+                padding: 7px 12px;
+                font-size: 13px;
+            }
+        }
+        
+        /* Ad Container Styles */
+        .ad-container {
+            max-width: 728px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            background: rgba(26, 26, 46, 0.3);
+            border-radius: 8px;
+        }
+        
+        .ad-container.mobile-ad {
+            display: none;
+            max-width: 320px;
+            min-height: 100px;
+        }
+        
+        @media (max-width: 768px) {
+            .ad-container.desktop-ad {
+                display: none;
+            }
+            .ad-container.mobile-ad {
+                display: block;
+                margin: 15px auto;
+            }
+        }
     </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3573490738793425"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3573490738793425"
      crossorigin="anonymous"></script>
 </head>
 <body>
@@ -249,8 +447,34 @@
         <section class="hero">
             <h1>All-in-one parcel tracking</h1>
             <p>Supports 3000+ carriers and 200+ airlines worldwide.</p>
-			<p>Insert your tracking number to check 17Track, ParcelsApp, and OrderTracker at the same time.</p>
+            <p>Insert your tracking number to check 17Track, ParcelsApp, and OrderTracker at the same time.</p>
         </section>
+
+        <!-- Ad Container for Desktop -->
+        <div class="ad-container desktop-ad">
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-3573490738793425"
+                data-ad-slot="1234567890"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!-- Ad Container for Mobile -->
+        <div class="ad-container mobile-ad">
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-3573490738793425"
+                data-ad-slot="0987654321"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
 
         <section class="tracking-card">
             <div class="tracking-header">
@@ -279,10 +503,10 @@
     </main>
 
     <footer style="text-align:center; padding:2rem; color:#7777a0; font-size:0.9rem;">
-        <footer>
-  <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/cookie-policy.html">Cookie Policy</a>
-</footer>
-© 2025 TrackPack.me. All rights reserved.
+        <div>
+            <a href="/privacy.html">Privacy Policy</a> | <a href="/cookie.html">Cookie Policy</a>
+        </div>
+        <div>© 2025 TrackPack.me. All rights reserved.</div>
     </footer>
 
     <script>
@@ -315,109 +539,69 @@
 
                 linkButtons.style.display = 'flex';
                 infoText.style.display = 'block';
+                
+                // Scroll to results for better mobile experience
+                linkButtons.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
 
             goBtn.addEventListener('click', updateLinks);
             input.addEventListener('keypress', (e) => { if (e.key === 'Enter') updateLinks(); });
+            
+            // Focus on input field on mobile for better UX
+            if ('ontouchstart' in window) {
+                input.focus();
+            }
         });
     </script>
-<style>
-  #cookie-banner {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #f0f4f8;
-    border: 1px solid #cbd5e1;
-    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-    padding: 18px 24px;
-    border-radius: 8px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #334155;
-    max-width: 400px;
-    text-align: center;
-    z-index: 10000;
-  }
-  #cookie-banner p {
-    margin: 0 0 12px 0;
-    font-size: 14px;
-  }
-  #cookie-banner a {
-    color: #2563eb;
-    text-decoration: underline;
-  }
-  #cookie-banner button {
-    background: #2563eb;
-    border: none;
-    color: white;
-    padding: 8px 18px;
-    margin: 0 6px;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  #cookie-banner button#reject-cookies {
-    background: #e0e7ff;
-    color: #475569;
-  }
-  #cookie-banner button:hover#accept-cookies {
-    background: #1d4ed8;
-  }
-  #cookie-banner button:hover#reject-cookies {
-    background: #c7d2fe;
-  }
-</style>
+    
+    <div id="cookie-banner" style="display:none;">
+        <p>
+            Questo sito utilizza cookie per migliorare la tua esperienza. 
+            <a href="/cookie.html" target="_blank" rel="noopener noreferrer">Scopri di più</a>
+        </p>
+        <button id="accept-cookies">Accetta</button>
+        <button id="reject-cookies">Rifiuta</button>
+    </div>
 
-<div id="cookie-banner" style="display:none;">
-  <p>
-    Questo sito utilizza cookie per migliorare la tua esperienza. 
-    <a href="/cookie.html" target="_blank" rel="noopener noreferrer">Scopri di più</a>
-  </p>
-  <button id="accept-cookies">Accetta</button>
-  <button id="reject-cookies">Rifiuta</button>
-</div>
+    <script>
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
+        }
+        
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for(let i=0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
 
-<script>
-  function setCookie(name, value, days) {
-    let expires = "";
-    if (days) {
-      let date = new Date();
-      date.setTime(date.getTime() + (days*24*60*60*1000));
-      expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
-  }
-  function getCookie(name) {
-    let nameEQ = name + "=";
-    let ca = document.cookie.split(';');
-    for(let i=0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-  }
+        window.onload = function() {
+            if (!getCookie('cookies_consent')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
 
-  window.onload = function() {
-    if (!getCookie('cookies_consent')) {
-      document.getElementById('cookie-banner').style.display = 'block';
-    }
+            document.getElementById('accept-cookies').onclick = function() {
+                setCookie('cookies_consent', 'accepted', 365);
+                document.getElementById('cookie-banner').style.display = 'none';
+                // Qui puoi attivare gli script di tracking, es. Google Analytics
+            };
 
-    document.getElementById('accept-cookies').onclick = function() {
-      setCookie('cookies_consent', 'accepted', 365);
-      document.getElementById('cookie-banner').style.display = 'none';
-    };
-
-    document.getElementById('reject-cookies').onclick = function() {
-      setCookie('cookies_consent', 'rejected', 365);
-      document.getElementById('cookie-banner').style.display = 'none';
-      // Qui puoi disattivare eventuali script di tracking
-    };
-  }
-</script>
+            document.getElementById('reject-cookies').onclick = function() {
+                setCookie('cookies_consent', 'rejected', 365);
+                document.getElementById('cookie-banner').style.display = 'none';
+                // Qui puoi disattivare eventuali script di tracking
+            };
+        }
+    </script>
 </body>
 </html>
-
-
-
