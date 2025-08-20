@@ -352,14 +352,16 @@
           <table class="carriers-table" id="carriers-table">
             <thead>
               <tr>
-                <th data-sort="name">Carrier Name <i class="fas fa-sort"></i></th>
-                <th data-sort="country">Country <i class="fas fa-sort"></i></th>
-                <th data-sort="website">Website <i class="fas fa-sort"></i></th>
+                <th data-sort="key">Key <i class="fas fa-sort"></i></th>
+                <th data-sort="name_en">Name (EN) <i class="fas fa-sort"></i></th>
+                <th data-sort="name_cn">Name (CN) <i class="fas fa-sort"></i></th>
+                <th data-sort="name_hk">Name (HK) <i class="fas fa-sort"></i></th>
+                <th data-sort="url">Website <i class="fas fa-sort"></i></th>
               </tr>
             </thead>
             <tbody id="carriers-table-body">
               <tr>
-                <td colspan="3" class="loading-indicator">
+                <td colspan="5" class="loading-indicator">
                   <i class="fas fa-spinner fa-spin"></i> Loading carriers data...
                 </td>
               </tr>
@@ -440,7 +442,7 @@
       let filteredData = [];
       let currentPage = 1;
       const itemsPerPage = 20;
-      let sortColumn = 'name';
+      let sortColumn = 'name_en';
       let sortDirection = 'asc';
       
       // Load CSV data from /data/carriers.csv
@@ -454,33 +456,29 @@
           
           const csvText = await response.text();
           
-          // Parse CSV
+          // Parse CSV with the new format: "key","name_en","name_cn","name_hk","url"
           const lines = csvText.split('\n');
-          const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
           
           carriersData = [];
           for (let i = 1; i < lines.length; i++) {
             if (lines[i].trim() === '') continue;
             
-            // Handle quoted fields that might contain commas
-            const regex = /(?:,|\n|^)("(?:(?:"")*[^"]*)*"|[^",\n]*|(?:\n|$))/g;
+            // Parse CSV line with quoted fields
+            const regex = /"([^"]+)"/g;
             let matches = [];
             let match;
             
             while ((match = regex.exec(lines[i])) !== null) {
-              if (match[0] === ',' || match[0] === '\n') continue;
-              let value = match[1];
-              if (value.startsWith('"') && value.endsWith('"')) {
-                value = value.substring(1, value.length - 1).replace(/""/g, '"');
-              }
-              matches.push(value.trim());
+              matches.push(match[1]);
             }
             
-            if (matches.length >= 3) {
+            if (matches.length >= 5) {
               carriersData.push({
-                name: matches[0],
-                country: matches[1],
-                website: matches[2]
+                key: matches[0],
+                name_en: matches[1],
+                name_cn: matches[2],
+                name_hk: matches[3],
+                url: matches[4]
               });
             }
           }
@@ -490,7 +488,7 @@
           renderTable();
         } catch (error) {
           console.error('Error loading carriers data:', error);
-          tableBody.innerHTML = `<tr><td colspan="3" style="text-align: center; color: #e74c3c;">
+          tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #e74c3c;">
             <i class="fas fa-exclamation-triangle"></i> Error loading carriers data. Please try again later.
           </td></tr>`;
           tableInfo.textContent = 'Error loading data';
@@ -518,14 +516,16 @@
         tableBody.innerHTML = '';
         
         if (pageData.length === 0) {
-          tableBody.innerHTML = `<tr><td colspan="3" style="text-align: center;">No carriers found</td></tr>`;
+          tableBody.innerHTML = `<tr><td colspan="5" style="text-align: center;">No carriers found</td></tr>`;
         } else {
           pageData.forEach(carrier => {
             const row = document.createElement('tr');
             row.innerHTML = `
-              <td>${carrier.name}</td>
-              <td>${carrier.country}</td>
-              <td><a href="${carrier.website}" target="_blank" rel="noopener">Visit Website</a></td>
+              <td>${carrier.key}</td>
+              <td>${carrier.name_en}</td>
+              <td>${carrier.name_cn}</td>
+              <td>${carrier.name_hk}</td>
+              <td><a href="${carrier.url}" target="_blank" rel="noopener">Visit Website</a></td>
             `;
             tableBody.appendChild(row);
           });
@@ -575,9 +575,11 @@
           filteredData = [...carriersData];
         } else {
           filteredData = carriersData.filter(carrier => 
-            carrier.name.toLowerCase().includes(searchTerm) ||
-            carrier.country.toLowerCase().includes(searchTerm) ||
-            carrier.website.toLowerCase().includes(searchTerm)
+            carrier.key.toLowerCase().includes(searchTerm) ||
+            carrier.name_en.toLowerCase().includes(searchTerm) ||
+            carrier.name_cn.toLowerCase().includes(searchTerm) ||
+            carrier.name_hk.toLowerCase().includes(searchTerm) ||
+            carrier.url.toLowerCase().includes(searchTerm)
           );
         }
         
