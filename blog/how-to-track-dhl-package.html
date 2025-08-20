@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Track DHL Packages - TrackPack.me</title>
+  <meta name="description" content="Learn how to easily track your DHL packages using TrackPack.me's multi-tracker comparison feature.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    /* Stili identici alla prima pagina */
+    :root {
+      --deep-space: #0a0a14;
+      --stellar-purple: #6c43f5;
+      --nebula-purple: #8a6cff;
+      --cosmic-gray: #1a1a2e;
+      --starlight: #e0e0ff;
+      --galaxy-edge: #0f0f1f;
+      --bg: #f6f3eb;
+      --fg: #111111;
+      --muted: #444444;
+      --card: #ffffff;
+      --border: rgba(108, 67, 245, 0.25);
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    :root[data-theme="dark"] {
+      --bg: var(--deep-space);
+      --fg: var(--starlight);
+      --muted: #a0a0c0;
+      --card: rgba(26, 26, 46, 0.6);
+      --border: rgba(138, 108, 255, 0.25);
+      --card-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .header-container {
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--fg);
+    }
+    .logo-icon {
+      font-size: 1.5rem;
+      color: var(--nebula-purple);
+    }
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      background: linear-gradient(90deg, var(--stellar-purple), var(--nebula-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--fg);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    main {
+      flex: 1;
+      width: 100%;
+      padding: 2rem 0;
+    }
+    .page-container {
+      width: 92%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, var(--stellar-purple), var(--nebula-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      color: var(--nebula-purple);
+    }
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+    .step-number {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background: var(--nebula-purple);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    .tip-box {
+      background: rgba(138, 108, 255, 0.1);
+      border-left: 4px solid var(--nebula-purple);
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .carrier-logo {
+      height: 40px;
+      margin-bottom: 1rem;
+    }
+    .bottom-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0 1rem;
+      flex-wrap: wrap;
+    }
+    .bottom-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .bottom-nav a:hover {
+      color: var(--nebula-purple);
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--muted);
+      font-size: .9rem;
+      border-top: 1px solid var(--border);
+      background: var(--card);
+      margin-top: auto;
+    }
+    @media (max-width: 768px) {
+      .card { padding: 1.5rem; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.3rem; }
+    }
+    @media (max-width: 480px) {
+      .card { padding: 1.2rem; }
+      h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="/" class="logo">
+        <i class="fas fa-box-open logo-icon"></i>
+        <div class="logo-text">TrackPack.me</div>
+      </a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span id="theme-icon" class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-container">
+      <div class="card">
+        <h1>How to Track DHL Packages with TrackPack.me</h1>
+        
+        <p>Welcome to our guide on tracking DHL packages! DHL is one of the world's leading logistics companies, and with our multi-tracker tool, you can easily monitor your DHL shipments from pickup to delivery.</p>
+
+        <h2>Step-by-Step Tracking Guide</h2>
+        
+        <p><span class="step-number">1</span> First, visit our <a href="/">TrackPack.me homepage</a>. You'll find a simple, clean interface designed to make tracking effortless.</p>
+        
+        <p><span class="step-number">2</span> Locate your DHL tracking number. This is typically a 10-digit number (e.g., 1234567890) for domestic shipments or up to 35 characters for international shipments.</p>
+        
+        <p><span class="step-number">3</span> Enter your tracking number in the search field on our homepage. Make sure to type it carefully to ensure accurate results.</p>
+        
+        <p><span class="step-number">4</span> Click the "Go" button to process your tracking request.</p>
+        
+        <p><span class="step-number">5</span> You'll now see options to track your package using different services. We recommend:</p>
+        <ul>
+          <li><strong>17Track</strong>: Excellent for detailed tracking history</li>
+          <li><strong>ParcelsApp</strong>: Great for international shipments</li>
+          <li><strong>OrderTracker</strong>: Simple, clean interface for quick updates</li>
+        </ul>
+        
+        <p><span class="step-number">6</span> For the most comprehensive view, click "Check them all!" to open all three trackers simultaneously in new tabs. This allows you to compare information across different platforms.</p>
+        
+        <div class="tip-box">
+          <p><strong>Important Note:</strong> If you click "Check them all!" and only one window opens, your browser's pop-up blocker might be preventing the other windows from opening. Simply allow pop-ups for our site, and try again for the full multi-tracker experience.</p>
+        </div>
+
+        <h2>DHL Tracking Features</h2>
+        
+        <p>DHL offers advanced tracking features including estimated delivery times, proof of delivery, and detailed shipment history. Our multi-tracker approach ensures you get the most complete picture of your package's journey.</p>
+        
+        <p>We hope this guide helps you easily track your DHL packages. At TrackPack.me, we're committed to making package tracking simple, efficient, and stress-free for all your shipping needs!</p>
+      </div>
+    </div>
+
+    <div class="bottom-nav">
+      <a href="/">Home</a>
+      <a href="/blog/">All Blog Posts</a>
+      <a href="/carriers.html">Supported Carriers</a>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <a href="/privacy-policy.html">Privacy Policy</a> | 
+      <a href="/cookie-policy.html">Cookie Policy</a>
+    </div>
+    <div>© 2025 TrackPack.me. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Theme toggle functionality
+    (function () {
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme');
+      if (!saved) {
+        root.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      } else if (saved) {
+        root.setAttribute('data-theme', saved);
+      }
+      
+      const icon = document.getElementById('theme-icon');
+      
+      function updateIcon() {
+        const theme = root.getAttribute('data-theme') || 'light';
+        icon.textContent = theme === 'light' ? '🌙' : '☀️';
+        icon.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+      }
+      
+      updateIcon();
+      
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateIcon();
+      });
+    })();
+  </script>
+</body>
+</html>
