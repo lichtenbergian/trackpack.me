@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+Disallow: /private/
+Disallow: /admin/
+Disallow: /tmp/
+
+Sitemap: https://trackpack.me/sitemap.xml
+
+# Google AdsBot specific rules
+User-agent: AdsBot-Google
+Allow: /
+
+# Crawl delay (1 request per second)
+Crawl-delay: 1
