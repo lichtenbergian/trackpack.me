@@ -128,7 +128,7 @@
     }
 
     .hero {
-      padding: 2.5rem 0 1.5rem;
+      padding: 2rem 0 1rem;
       text-align: center;
       width: 92%;
       max-width: 900px;
@@ -139,10 +139,17 @@
       font-size: clamp(1.8rem, 4vw, 2.8rem);
       font-weight: 800;
       line-height: 1.1;
-      margin: 0 0 .6rem 0;
+      margin: 0 0 .5rem 0;
       background: linear-gradient(90deg, var(--stellar-purple), var(--nebula-purple));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+      font-weight: 700;
+      color: var(--nebula-purple);
+      margin: 0 0 0.5rem 0;
     }
 
     .hero p {
@@ -226,6 +233,14 @@
       box-shadow: 0 5px 15px rgba(108, 67, 245, 0.3);
     }
 
+    .user-count {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0.5rem 0 1.5rem;
+      font-style: italic;
+    }
+
     .link-buttons {
       display: flex;
       flex-direction: column;
@@ -260,6 +275,67 @@
       line-height: 1.5;
     }
 
+    /* FAQ Section */
+    .faq-section {
+      margin-top: 2rem;
+    }
+    
+    .faq-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding: 1.2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+    }
+    
+    .faq-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--nebula-purple);
+    }
+    
+    .faq-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-item ol, .faq-item ul {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      padding-left: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .ad-container {
+      margin: 1.5rem 0;
+      padding: 10px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-align: center;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .ad-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 5px;
+    }
+    
     /* Bottom navigation */
     .bottom-nav {
       display: flex;
@@ -365,6 +441,13 @@
     }
 
     /* Responsive adjustments */
+    @media (min-width: 992px) {
+      .faq-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+    }
+
     @media (max-width: 768px) {
       .header-container {
         padding: 0.8rem 0;
@@ -381,6 +464,16 @@
       .track-btn {
         padding: 14px;
         justify-content: center;
+      }
+      
+      .faq-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .faq-item {
+        margin-bottom: 1.2rem;
+        padding: 1rem;
       }
       
       .bottom-nav {
@@ -409,6 +502,10 @@
       
       .hero h1 {
         font-size: 1.8rem;
+      }
+
+      .hero-tagline {
+        font-size: 1.2rem;
       }
       
       .hero p {
@@ -448,6 +545,7 @@
   <main>
     <section class="hero">
       <h1>All-in-one parcel tracking</h1>
+      <div class="hero-tagline">The most comprehensive global parcel tracking service in the world.</div>
       <p>Supports 3000+ carriers and 200+ airlines worldwide.</p>
       <p>Enter your tracking number to open 17Track, ParcelsApp, and OrderTracker at once.</p>
     </section>
@@ -462,6 +560,8 @@
         <button class="track-btn" id="track-btn"><i class="fas fa-search"></i> Go</button>
       </div>
 
+      <div class="user-count">Join tens of thousands of people who use it every day</div>
+
       <div class="link-buttons" id="link-buttons" style="display:none;">
         <a id="link-17track" class="site-link" target="_blank" rel="noopener">Track on 17Track</a>
         <a id="link-parcelsapp" class="site-link" target="_blank" rel="noopener">Track on ParcelsApp</a>
@@ -473,6 +573,242 @@
         Enter your tracking number above, click "Go", and choose one of the websites.<br>
         Use "Check them all!" to open all trackers in new tabs.<br>
         If popups are blocked, allow popups for this site in your browser.
+      </div>
+    </section>
+
+    <!-- New FAQ Section with individual items for AdSense -->
+    <section class="faq-section page-container">
+      <div class="card">
+        <div class="tracking-header">
+          <h2><i class="fas fa-question-circle"></i> Parcel Tracking FAQs</h2>
+        </div>
+        
+        <div class="faq-content">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item">
+            <h3>International parcel tracking done right</h3>
+            <p>Find out how to track any package or parcel from around the world</p>
+          </div>
+          
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <h3>How to track my international parcel?</h3>
+            <p>Tracking international parcel can be cumbersome, you have to know which carrier will handle parcel delivery, when international delivery company will pass parcel to local postal or courier company. With our parcel tracker all of the above are non issues.</p>
+            <p>You'll get comprehensive tracking events history, delivery time estimate, current parcel status and location and links to each official carrier website with prefilled tracking id, so you can be sure tracking info is up to date.</p>
+          </div>
+          
+          <!-- Ad Container -->
+          <div class="ad-container">
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-3573490738793425"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+          <div class="ad-label">Advertisement</div>
+          
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <h3>International shipping tracking</h3>
+            <p>Tired of trying to track your international package? I'm are here to help. International package tracking with any tracking number you may have will just work.</p>
+            <p>If you happen to have unsupported tracking number, just send me a quick note with tracking number and shipping company name, and add I'll support for it in a couple days.</p>
+          </div>
+          
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <h3>How do I track a package?</h3>
+            <p>What's new about tracking a package with our postal tracker is that you need just a tracking number and that's it. No need to guess carrier, no need to manually track with multiple carriers and no need to translate tracking status to understand what it means in Chinese.</p>
+            <p>To track a package enter your tracking number on this page and hit Track Package.</p>
+          </div>
+          
+          <!-- FAQ Item 5 -->
+          <div class="faq-item">
+            <h3>Parcel tracking in UK</h3>
+            <p>Even though most parcels going to UK are delivered by Royal Mail, they start their way with other carriers and have to guess which one and how to track them. Not anymore, we integrated most popular shipping companies around the world and transparently tracking your UK parcels all the way from seller's warehouse to your door.</p>
+          </div>
+          
+          <!-- Ad Container -->
+          <div class="ad-container">
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-3573490738793425"
+                 data-ad-slot="1234567891"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+          <div class="ad-label">Advertisement</div>
+          
+          <!-- FAQ Item 6 -->
+          <div class="faq-item">
+            <h3>What is "Departure from outward office of exchange"? How long it will take?</h3>
+            <p>"Departure from outward office of exchange" means the parcel is ready for export customs security scan. Once it passes the scan, it will be sent to airline.</p>
+            <p>Normally this procedure will complete within 2 to 10 days.If your parcel stuck in this status for more than 2 or even 3 weeks. Normally this means the parcel has problem to pass security check and will be returned to shipper. You should open a dispute ASAP.</p>
+          </div>
+          
+          <!-- FAQ Item 7 -->
+          <div class="faq-item">
+            <h3>What does the status "Arrival at inward office of exchange" mean?</h3>
+            <p>"Arrival at inward office of exchange" means the parcel has arrived destination country's import customs office. Once the import customs clearance is done, the parcel will be delivered by destination country's postal service company.</p>
+          </div>
+          
+          <!-- FAQ Item 8 -->
+          <div class="faq-item">
+            <h3>What does "Import Customs Scan" mean?</h3>
+            <p>If you got the status of "Import Customs Scan", there are 3 possibilities:</p>
+            <ol>
+              <li>If the parcel was originally shipped from China and the location shows as a Chinese city such as Beijing, Shanghai etc, then it means the parcel was returned back to China from oversea country. Normally the parcel will be sent back to shipper and recipient will NOT receive this parcel in future unless the shipper pay extra shipping fee and send it again.</li>
+              <li>If the parcel was originally shipped from China and the location shows as recipient's country, it means the parcel has arrived destination country import customs and will be delivered as soon as the customs clearance finishes.</li>
+              <li>If the parcel was originally shipped from other country outside China and the location shows as a Chinese city such as Beijing, Shanghai etc,then it means the parcel has arrived China and will be delivered as soon as the customs clearance finishes.</li>
+            </ol>
+          </div>
+          
+          <!-- Ad Container -->
+          <div class="ad-container">
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-3573490738793425"
+                 data-ad-slot="1234567892"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+          <div class="ad-label">Advertisement</div>
+          
+          <!-- FAQ Item 9 -->
+          <div class="faq-item">
+            <h3>What does "Sent to airline" mean? How long will it arrive after "Sent to airline"?</h3>
+            <p>"Sent to airline" means China Post has given the parcel to airline company. It does NOT necessarily mean the parcel has been on plane.</p>
+            <p>The "Sent to airline" status will stuck for long time until the parcel arrives at an airport sorting center which has scanning service. This might take 2 to 4 weeks in regular season and 4 to 6 weeks in holiday season. Normally the parcel should have arrived at destination country when new status shows up.</p>
+            <p>If over 30 days (or 45 days in rush season) after "sent to airline" and you still do not receive the parcel, then you should be cautious. The parcel might be lost or seriously delayed somewhere outside China. You should open a dispute to claim your money back from seller.</p>
+          </div>
+          
+          <!-- FAQ Item 10 -->
+          <div class="faq-item">
+            <h3>Why does my tracking result show only one message "Electronic data received" or "Electronic information received"?</h3>
+            <p>If your tracking result has only one message "Electronic data received", this means your seller/shipper applied for tracking number from postal company, but did not actually ship the goods yet.</p>
+            <p>Many China sellers delay shipment for 5 to 10 days due to inventory shortage. So if you just got the number which shows "Electronic data received", please wait one or two weeks and track again. In most of cases, seller will ship the goods and you can see real shipment date and shipping location.</p>
+            <p>If you still can not see new status after 10 days, you should be cautious of fraud. You should talk to a seller and ask him to give you real shipping date and real tracking number. If seller can not give you reasonable reply, you should open dispute on eBay/AliExpress/Amazon.</p>
+          </div>
+          
+          <!-- FAQ Item 11 -->
+          <div class="faq-item">
+            <h3>What is the meaning of "Shipping notice received"?</h3>
+            <p>When tracking you might get "Shipping notice received" or "Shipping notice received from WISH" or "Logistics order has been created".</p>
+            <p>This means seller/shipper has applied a tracking number with shipping software provided by third party (WISH, AliExpress etc) but has not shipped the goods yet.</p>
+            <p>If you just got the tracking number from seller, please wait about 2 to 3 business days, if seller has actually shipped the goods. China Post tracking system will provide updated shipment date and location information about the parcel number.</p>
+            <p>If over 3 business days and you still get same result as "shipping notice received". You should be cautious of fake shipment. If you purchased from big website such as eBay/AliExpress/Amazon/Wish etc, you should contact seller and push him/her to ship the goods immediately. Tell him/her if you can not get real shipment information in next 3 days, you will open dispute against fraud. In most of cases, sellers will take immediate action on shipment to avoid dispute and shop downgrade penalty.</p>
+          </div>
+          
+          <!-- Ad Container -->
+          <div class="ad-container">
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-3573490738793425"
+                 data-ad-slot="1234567893"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+          <div class="ad-label">Advertisement</div>
+          
+          <!-- FAQ Item 12 -->
+          <div class="faq-item">
+            <h3>China Post tracking</h3>
+            <p>Tracking packages from China remains our most popular feature and our tracker truly excels at that. We support China Post, ePacket, Winit, Yanwen, Yun Express and countless other shipping companies that deliver packages via China Post.</p>
+            <p>All statuses are translated from Chinese to English and you'll even get delivery time estimate for your China Post package.</p>
+          </div>
+          
+          <!-- FAQ Item 13 -->
+          <div class="faq-item">
+            <h3>DHL Global Mail tracking</h3>
+            <p>DHL Global Mail is an excellent, cheap and effective delivery method for small packages. The reason it's cheap is because DHL works with local carriers in China, United States to get packages from seller to DHL's consolidation center. And after package arrives to destination country, DHL hands it over to local carrier as well. Read more in our extensive guide to DHL eCommerce and DHL Global Mail tracking.</p>
+          </div>
+          
+          <!-- FAQ Item 14 -->
+          <div class="faq-item">
+            <h3>My parcel has arrived at destination country for a long time without delivery, why?</h3>
+            <p>If your tracking results shows the parcel has arrived destination for long time, but does not have delivery information, normally this means the parcel has delivery problem.</p>
+            <p>If the parcel is shipped from China to your country, the failure delivery reasons might be as following:</p>
+            <ul>
+              <li>The address, city or postal code is wrong.</li>
+              <li>The import customs does not release the goods</li>
+              <li>The postman has sent the goods to your mailbox or front door and you have not checked yet.</li>
+              <li>The recipient is not available in the address when postman tried to make delivery.</li>
+              <li>The parcel address has no P.O Box number . This is most common return reason for parcels to U.A.E</li>
+            </ul>
+            <p>Remember that China is a member of Universal Postal Union(UPU), its parcel will be delivered by the UPU member in your country. In most cases, this UPU member is your country's postal service provider or postal company. So if the parcel has delivery problem in your country, you should contact your local post office and inquire about parcel delivery.</p>
+          </div>
+          
+          <!-- FAQ Item 15 -->
+          <div class="faq-item">
+            <h3>How to open dispute and claim refund for fake tracking number and non received parcel?</h3>
+            <p>Package has been returned to shipper, but seller does not confess that he/she have received the return and refuse to refund me money, how can I get my money back? Parcel was returned to shipper, or even shows "Failed delivery". How can I get refund from China Post? The tracking status has not changed over 40 days,I still do not get the item, can I contact seller or China Post for refund?</p>
+            <p>China Post does not deal with recipient directly. China Post only accept query or claim from shipper who has original shipping receipt.</p>
+            <p>So, for recipient, the best solution is to contact your payment authority(ebay, aliexpress, paypal or credit card company) and file a non-receipt dispute ASAP.</p>
+            <p>Once you have filed the dispute, then it becomes seller's duty to prove that the parcel has been successfully delivered to buyer. If he/she can not give such proof in specific time period, the money will be automatically refunded to buyer.</p>
+          </div>
+          
+          <!-- Ad Container -->
+          <div class="ad-container">
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-3573490738793425"
+                 data-ad-slot="1234567894"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+          <div class="ad-label">Advertisement</div>
+          
+          <!-- FAQ Item 16 -->
+          <div class="faq-item">
+            <h3>How to file such non-receipt dispute?</h3>
+            <p>In eBay, PayPal or AliExpress, there is a link or web page called "Resolution Center" or "Dispute Center". You can file non-receipt there.</p>
+          </div>
+          
+          <!-- FAQ Item 17 -->
+          <div class="faq-item">
+            <h3>Is there any deadline to file non-receipt dispute?</h3>
+            <p>YES. For eBay, PayPal, you need to file the dispute within 45 days of your payment. For AliExpress, it is 60 days.</p>
+          </div>
+          
+          <!-- FAQ Item 18 -->
+          <div class="faq-item">
+            <h3>What if I passed the dispute deadline and still want to get refund?</h3>
+            <p>If you have passed deadline to file dispute, then the only way is to contact seller. Normally big sellers who have high positive feedback rate will give you good solution in exchange of good feedback from you. This will help their shop to get better selling performance.</p>
+          </div>
+          
+          <!-- FAQ Item 19 -->
+          <div class="faq-item">
+            <h3>What if I buy from some website which does not have "dispute center" and I did not make payment by paypal or alipay?</h3>
+            <p>Unfortunately, this makes it very difficult to get your money back. So we suggest buyer to buy from China sellers in big marketplace such as ebay,aliexpress, amazon etc which have good customer protection system. If you buy from independent shopping website, then please select paypal as payment method. NEVER use wire transfer or money order or western union,or bit-coin to make payment especially from unfamiliar sellers.</p>
+          </div>
+          
+          <!-- FAQ Item 20 -->
+          <div class="faq-item">
+            <h3>How do I track an air cargo shipment?</h3>
+            <p>Air Cargo Tracking made easy. All you need is the AWB-number. This number can be used to track the air cargo shipment on our website, we will download tracking information directly from airline's website.</p>
+            <p>You are issued with an Air Waybill number; this is a receipt issued by an international airline for goods and an evidence of the contract of carriage. Air Waybills have eleven digit numbers which can be used to make bookings, check the status of delivery, and current position of the shipment. The first three digits are the airline prefix. Each airline has been assigned a 3-digit number by IATA, so from the prefix we know which airline has issued the document.</p>
+          </div>
+        </div>
       </div>
     </section>
 
