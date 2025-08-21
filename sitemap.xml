@@ -5,5 +5,13 @@
   <url><loc>https://trackpack.me/cookie-policy.html</loc><priority>0.5</priority></url>
   <url><loc>https://trackpack.me/carriers.html</loc><priority>0.8</priority></url>
   <url><loc>https://trackpack.me/blog/</loc><priority>0.6</priority></url>
-  <url><loc>https://trackpack.me/blog/how-to-track-a-parcel.html</loc><priority>0.7</priority></url>
+  <url><loc>https://trackpack.me/blog/how-to-track-DSV-Schenker-package.html</loc><priority>0.7</priority></url>
+  <url><loc>https://trackpack.me/blog/how-to-track-dhl-package.html</loc><priority>0.7</priority></url>
+  <url><loc>https://trackpack.me/blog/how-to-track-fedex-package.html</loc><priority>0.7</priority></url>
+  <url><loc>https://trackpack.me/blog/how-to-track-poste-italiane-package.html</loc><priority>0.7</priority></url>
+  <url><loc>https://trackpack.me/blog/how-to-track-sf-express-package.html</loc><priority>0.7</priority></url>
+  <url><loc>https://trackpack.me/blog/how-to-track-ups-package.html</loc><priority>0.7</priority></url>
+  <url><loc>https://trackpack.me/blog/how-to-track-zto-express-package.html</loc><priority>0.7</priority></url>
+  
 </urlset>
+
