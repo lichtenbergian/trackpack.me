@@ -3,6 +3,8 @@
   <url><loc>https://trackpack.me/</loc><priority>1.0</priority></url>
   <url><loc>https://trackpack.me/privacy-policy.html</loc><priority>0.5</priority></url>
   <url><loc>https://trackpack.me/cookie-policy.html</loc><priority>0.5</priority></url>
+  <url><loc>https://trackpack.me/ads.txt</loc><priority>0.5</priority></url>
+  <url><loc>https://trackpack.me/robots.txt</loc><priority>0.5</priority></url>
   <url><loc>https://trackpack.me/carriers.html</loc><priority>0.8</priority></url>
   <url><loc>https://trackpack.me/blog/</loc><priority>0.6</priority></url>
   <url><loc>https://trackpack.me/blog/how-to-track-DSV-Schenker-package.html</loc><priority>0.7</priority></url>
@@ -73,3 +75,4 @@
 <url><loc>https://trackpack.me/carriers/how-to-track-with-yunexpress.html</loc><lastmod>2025-09-15</lastmod></url>
 <url><loc>https://trackpack.me/carriers/how-to-track-with-ywe.html</loc><lastmod>2025-09-15</lastmod></url>
 </urlset>
+
